@@ -1,0 +1,87 @@
+<!DOCTYPE html>  <html>  
+    <head>  
+        <title> Dice Roller..</title>  
+        <style>  
+            body{  
+               background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);  
+                min-height: 100vh;  
+            }  
+            .heading{  
+                text-align: center;  }  
+           
+        .dice-container{  
+            width: 300px;  
+            margin: 0 auto;  
+            padding: 20px;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+        }  
+
+        .img-dice{  
+            width: 100px;  
+            height: 100px;  
+            margin: 20px auto;  
+        }  
+
+        .btn-roll{  
+            padding: 5px;  
+            font-size:  16px;  
+            cursor: pointer;  
+            width: 100px;  
+            border: none;  
+            background-color: tomato;  
+            color: white;  
+            border-radius: 5px;  
+
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1 class="heading">Dice Roller</h1>  
+
+    <div class="dice-container">  
+      <img src="one.png" id="img-dice" class="img-dice"/>  
+
+    <button onclick="rollDice()" class="btn-roll">Roll Dice</button>  
+      
+    </div>  
+
+    <script>  
+        const imgDice = document.getElementById("img-dice");  
+
+        function getDiceFace(){  
+            const min = 1;  
+            const max = 6;  
+            return Math.floor(Math.random()* (max - min + 1))+ min;  
+        }  
+
+        function rollDice(){  
+            const diceFace = getDiceFace();  
+
+            if(diceFace == 1){  
+               imgDice.src ="one.png";  
+            
+            } else if (diceFace == 2){  
+            imgDice.src ="two.png";  
+          }    
+            else if (diceFace == 3){  
+            imgDice.src ="three.png";  
+          }    
+
+           else if (diceFace == 4){  
+            imgDice.src ="four.png";  
+          }    
+
+          else if (diceFace == 5){  
+            imgDice.src ="five.png";  
+          }    
+
+          else if (diceFace == 6){  
+            imgDice.src ="six.png";  
+          }   
+        }   
+        </script>  
+</body>
+
+</html>
